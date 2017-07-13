@@ -4,18 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.elton</groupId>
-	<artifactId>base</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>currencyserver</artifactId>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>base</name>
-	<description>Demo project for Spring Boot</description>
+	<name>currency-server</name>
+	<description/>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.4.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<properties>
@@ -24,9 +24,7 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-	<repositories>
-
-	</repositories>
+	<repositories/>
 
 	<dependencies>
 		<dependency>
@@ -58,7 +56,6 @@
 			<artifactId>modelmapper</artifactId>
 			<version>0.7.4</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -69,6 +66,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
