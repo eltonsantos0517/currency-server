@@ -2,6 +2,7 @@ package com.elton.currencyserver.schedules;
 
 import com.elton.currencyserver.facades.CurrencyFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,7 +14,7 @@ public class ScheduleTasks {
     @Autowired
     private CurrencyFacade currencyFacade;
 
-    //@Scheduled(cron = "*/30 * * * * *")
+    @Scheduled(cron = "0 0/30 * * * ?")
     public void updateCurrencies() throws Exception{
         currencyFacade.updateCurrencies();
     }
