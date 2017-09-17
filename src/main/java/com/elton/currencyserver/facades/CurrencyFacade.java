@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.Optional;
 
 /**
  * Created by elton on 12/07/2017.
@@ -67,15 +68,16 @@ public class CurrencyFacade {
     }
 
     public ResponseEntity<ApiResponse> getLastCurrency() {
-
         try {
-            CurrencyDTO currency = modelMapper.map(currencyService.getLastCurrency(), CurrencyDTO.class);
+            CurrencyDTO currency = modelMapper.map(Optional.ofNullable(currencyService.getLastCurrency()).orElseGet(() -> {
+                    updateCurrencies();
+                    return currencyService.getLastCurrency();
+            }), CurrencyDTO.class);
             return ApiResponse.buildResponse(null, HttpStatus.OK, null, null, null, currency);
         } catch (Exception e) {
             LOG.error(PropertiesUtil.getMessage("msg.error.internal"), e);
             return ApiResponse.buildResponse(PropertiesUtil.getMessage("msg.error.internal"), HttpStatus
                     .INTERNAL_SERVER_ERROR, null, null, null, null);
         }
-
     }
 }
