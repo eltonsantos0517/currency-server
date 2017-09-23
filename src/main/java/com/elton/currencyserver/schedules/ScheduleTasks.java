@@ -15,7 +15,7 @@ public class ScheduleTasks {
     private CurrencyFacade currencyFacade;
 
     @Scheduled(cron = "0 0/30 * * * ?")
-    public void updateCurrencies() throws Exception{
+    public void updateCurrencies() {
         currencyFacade.updateCurrencies();
     }
 }

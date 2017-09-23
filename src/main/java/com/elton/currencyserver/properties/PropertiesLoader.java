@@ -12,7 +12,7 @@ import java.util.Properties;
  */
 public class PropertiesLoader {
 
-    private final static String BASE_PATH_OF_PROPERTIES = "";
+    private static final String BASE_PATH_OF_PROPERTIES = "";
 
     private Logger LOG = LoggerFactory.getLogger(PropertiesLoader.class);
 

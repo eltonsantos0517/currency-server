@@ -9,7 +9,7 @@ import java.util.Properties;
  */
 public class PropertiesUtil {
 
-    private final static String PROPERTIES_ARCHIVE = "messages.properties";
+    private static final String PROPERTIES_ARCHIVE = "messages.properties";
 
     private PropertiesUtil(){}
 
