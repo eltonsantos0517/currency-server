@@ -3,6 +3,7 @@ package com.elton.currencyserver.controllers;
 import com.elton.currencyserver.dtos.ApiResponse;
 import com.elton.currencyserver.facades.CurrencyFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +23,7 @@ public class CurrencyController {
         return currencyFacade.updateCurrencies();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "get-all-currencies")
+    @RequestMapping(method = RequestMethod.GET, value = "get-all-currencies", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ApiResponse> getLastCurrency(){
         return currencyFacade.getLastCurrency();
     }
